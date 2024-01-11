@@ -1,4 +1,5 @@
 // CHMOD Calculator- UNIX Access Permissions
+
 const concatPerm = (permissions) => `${permissions.map(permission => permSwitch(permission)).join('')}`;
 
 function calculatePermissions() {
@@ -7,7 +8,7 @@ function calculatePermissions() {
    const writeCheckbox = document.getElementById('owner-box-write').checked;
    const executeCheckbox = document.getElementById('owner-box-execute').checked;
 
-   // Convert checkbox values to numeric values (1 for checked, 0 for unchecked)
+   // Assign numeric values to checkboxes (1 for checked, 0 for unchecked)
    const readValue = readCheckbox ? 4 : 0;
    const writeValue = writeCheckbox ? 2 : 0;
    const executeValue = executeCheckbox ? 1 : 0;
@@ -15,12 +16,11 @@ function calculatePermissions() {
    // Use bitwise OR to calculate combined value
    const combinedValue = readValue | writeValue | executeValue;
 
-   // Log the combined value
    console.log("Combined Value:", combinedValue);
 
-   // You can use the combinedValue as needed (e.g., pass it to your permSwitch function)
 }
 
+// Returns correct permissions based on input (Octal Numbers from checkbox)
 const permSwitch = (xPermission) => {
   console.log("permSwitch function - run" + xPermission);
   switch (xPermission){
@@ -45,16 +45,30 @@ const permSwitch = (xPermission) => {
   }
 };
 
+// Test-data for checking permissions ! REMOVE IN LATER VERSION !
 let ownerPermNum = 0b111;
 let groupPermNum = 0b011;
 let publicPermNum = 0b101;
-console.log(0b001+0b001);
 
+// Array that holds all 3 permission levels
 const permArr = [ownerPermNum, groupPermNum, publicPermNum];
-// let permissionString = `${permSwitch(ownerPermNum)} ${permSwitch(groupPermNum)} ${permSwitch(publicPermNum)}`;
 
 let result = concatPerm(permArr);
 console.log(result);
+
+// Permission String Display
+// const permissionDisplayHtml = (permStr) => displayPermissionText = document.getElementById('perm-text').innerHTML = permStr;
+const displayPermissions = (permStr) => {
+  permissionTextHtml = document.getElementById('perm-text');
+  if(permissionTextHtml){
+    permissionTextHtml.innerHTML = permStr;
+    } else{
+    console.error("Can't find id with element");
+  }
+  return permissionTextHtml;
+};
+
+let finalStringResult = displayPermissions(result);
 // Garbage crap test
 
 // Anonymous function
