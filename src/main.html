@@ -1,0 +1,77 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <script src="App.js"></script>
+</head>
+<body>
+
+<h1>My First Heading</h1>
+<p>My first paragraph.</p>
+
+<!-- Owner -->
+<fieldset class="permission-box">
+  <legend>Owner</legend>
+  <div>
+    <input type="checkbox" id="owner-box-read" name="Read" checked />
+    <label for="Read">Read</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="owner-box-write" name="Write" />
+    <label for="Write">Write</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="owner-box-execute"name="Execute" />
+    <label for="Execute">Execute</label>
+  </div>
+
+</fieldset>
+
+<!-- Group -->
+<fieldset class="permission-box">
+  <legend>Group</legend>
+  <div>
+    <input type="checkbox" id="group-box-read" name="Read" checked />
+    <label for="Read">Read</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="group-box-write" name="Write" />
+    <label for="Write">Write</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="group-box-execute"name="Execute" />
+    <label for="Execute">Execute</label>
+  </div>
+
+</fieldset>
+
+<!-- Public -->
+<fieldset class="permission-box">
+  <legend>Public</legend>
+  <div>
+    <input type="checkbox" id="public-box-read" name="Read" checked />
+    <label for="Read">Read</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="public-box-write" name="Write" />
+    <label for="Write">Write</label>
+  </div>
+
+  <div>
+    <input type="checkbox" id="public-box-execute"name="Execute" />
+    <label for="Execute">Execute</label>
+  </div>
+
+</fieldset>
+<button onclick="calculatePermissions()">Calculate Permissions</button>
+<div class="permission-display">
+  <p id="permission-display">----------</p>
+</div>
+
+</body>
+</html> 
+
