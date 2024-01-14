@@ -1,0 +1,51 @@
+/* Updated styles to stretch the permission boxes and add a border */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.permission-box-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    border: 2px solid #007BFF; /* Border around all boxes */
+    box-sizing: border-box;
+}
+
+.permission-box {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.permission-box input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.permission-box label {
+    font-weight: bold;
+}
+
+h1 {
+    color: #007BFF;
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff;
+    border-bottom: 2px solid #007BFF;
+}
+
+.permission-display {
+     margin-top: 20px;
+     text-align: center;
+ }
+
+ #permission-display {
+     font-size: 24px;
+     font-family: 'Courier New', monospace;
+     color: #007BFF;
+     background-color: #f4f4f4;
+     padding: 10px;
+     border-radius: 5px;
+     border: 2px solid #007BFF;
