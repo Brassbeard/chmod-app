@@ -7,43 +7,54 @@ body {
 .permission-box-container {
     display: flex;
     justify-content: space-around;
-    padding: 20px;
-    border: 2px solid #007BFF; /* Border around all boxes */
-    box-sizing: border-box;
+    padding: 2%;
+    background: #F1F3F4;
+    }
+
+.header-wrapper{
+    color: #141414;
+    text-align: center;
+    padding: 1% 0;
+    background-color: #ffffff;
+}
+
+.page-wrapper{
+    margin: 0.7%;
+    text-align: center:
+    font-family: 'Courier New', monospace;
+    color: #222222;
+    border: 1.3px solid #A9A9A9 /* Border around all boxes */
 }
 
 .permission-box {
     flex: 1;
-    padding: 15px;
+    padding: 2%;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 1%;
     background-color: #fff;
 }
 
 .permission-box input[type="checkbox"] {
-    margin-right: 5px;
+    margin-right: 1%;
 }
 
 .permission-box label {
     font-weight: bold;
+
 }
 
-h1 {
-    color: #007BFF;
-    text-align: center;
-    padding: 20px 0;
-    background-color: #ffffff;
-    border-bottom: 2px solid #007BFF;
+.permission-box label:hover {
+    border-color: #CDDC39
+
 }
 
 .permission-display {
-    margin-top: 20px;
+    margin-top: 0%; /* unused*/
     text-align: center;
     font-size: 24px;
-    font-family: 'Courier New', monospace;
-    color: #007BFF;
+    
     background-color: #f4f4f4;
-    padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #007BFF;
+    padding: 1%;
+    border-radius: 1%;
+    /*border: 2px solid #007BFF;*/
 }

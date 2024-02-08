@@ -6,77 +6,80 @@
 </head>
 <body>
 
-<h1>CHMOD Checker</h1>
-<p>Calculate Unix Acces Permissions visually.</p>
-
+<div class="header-wrapper">
+  <h1>CHMOD Checker</h1>
+  <p>Calculate Unix Acces Permissions visually.</p>
+</div>
 <!-- Owner -->
 
-<div class="permission-box-container">
-  <fieldset class="permission-box">
-    <legend>Owner</legend>
-
-      <div>
-        <input type="checkbox" id="owner-box-read" name="Read" checked />
-        <label for="Read">Read</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="owner-box-write" name="Write" />
-        <label for="Write">Write</label>
-      </div>
-
-      <div>
-        <input type="checkbox" id="owner-box-execute"name="Execute" />
-        <label for="Execute">Execute</label>
-      </div>
-    </fieldset>
-
-<!-- Group -->
-  <fieldset class="permission-box">
+<div class="page-wrapper">
+  <div class="permission-box-container">
+    <fieldset class="permission-box">
+      <legend>Owner</legend>
+        
+        <div>
+          <input type="checkbox" id="owner-box-read" name="Read" checked />
+          <label for="Read">Read</label>
+        </div>
     
-    <legend>Group</legend>
-    <div>
-      <input type="checkbox" id="group-box-read" name="Read" checked />
-      <label for="Read">Read</label>
-    </div>
-  
-    <div>
-      <input type="checkbox" id="group-box-write" name="Write" />
-      <label for="Write">Write</label>
-    </div>
-  
-    <div>
-      <input type="checkbox" id="group-box-execute"name="Execute" />
-      <label for="Execute">Execute</label>
-    </div>
-    </fieldset>
-  
-  <!-- Public -->
-  <fieldset class="permission-box">
-    <legend>Public</legend>
+          <div>
+            <input type="checkbox" id="owner-box-write" name="Write" />
+            <label for="Write">Write</label>
+          </div>
     
-    <div>
-      <input type="checkbox" id="public-box-read" name="Read" checked />
-      <label for="Read">Read</label>
-    </div>
+          <div>
+            <input type="checkbox" id="owner-box-execute"name="Execute" />
+            <label for="Execute">Execute</label>
+          </div>
+        </fieldset>
+    
+    <!-- Group -->
+      <fieldset class="permission-box">
+        
+        <legend>Group</legend>
+        <div>
+          <input type="checkbox" id="group-box-read" name="Read" checked />
+          <label for="Read">Read</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="group-box-write" name="Write" />
+          <label for="Write">Write</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="group-box-execute"name="Execute" />
+          <label for="Execute">Execute</label>
+        </div>
+        </fieldset>
+      
+      <!-- Public -->
+      <fieldset class="permission-box">
+        <legend>Public</legend>
+        
+        <div>
+          <input type="checkbox" id="public-box-read" name="Read" checked />
+          <label for="Read">Read</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="public-box-write" name="Write" />
+          <label for="Write">Write</label>
+        </div>
+      
+        <div>
+          <input type="checkbox" id="public-box-execute"name="Execute" />
+          <label for="Execute">Execute</label>
+        </div>
+    
+        </fieldset>
+  </div>
   
-    <div>
-      <input type="checkbox" id="public-box-write" name="Write" />
-      <label for="Write">Write</label>
-    </div>
-  
-    <div>
-      <input type="checkbox" id="public-box-execute"name="Execute" />
-      <label for="Execute">Execute</label>
-    </div>
+  <div class="permission-display">
+    <p id="permission-display-str">--- --- ---</p>
+    <p id="permission-display-oct">000</p>
+  </div>  
 
-    </fieldset>
-</div>
-
-
-<div class="permission-display">
-  <p id="permission-display-str">--- --- ---</p>
-  <p id="permission-display-oct">000</p>
 </div>
 
 <!-- Fix this, place script in <head></head> -->
