@@ -19,11 +19,25 @@ const calculatePermissions = () => {
     const ownerPermissions = getCheckboxPermissions('owner');
     const groupPermissions = getCheckboxPermissions('group');
     const publicPermissions = getCheckboxPermissions('public');
-
-    const combinedPermissions = [ownerPermissions, groupPermissions, publicPermissions].join(' ');
-
-    displayPermissions(combinedPermissions);
+    const combinedPermissions = [ownerPermissions[1], groupPermissions[1], publicPermissions[1]].join(' ');
+    const combinedPermissionNum = [ownerPermissions[0], groupPermissions[0], publicPermissions[0]].join(' ');    
+    console.log(combinedPermissions, '\n', combinedPermissionNum);
+    displayPermissions(combinedPermissions, combinedPermissionNum);
 };
+
+
+// Displays the permStr (Permission String) in html.
+const displayPermissions = (permStr, combVal) => {
+    const permissionTextHtml = document.getElementById('permission-display-str');
+    const permissionTextNumHtml = document.getElementById('permission-display-oct');
+    if (permissionTextHtml && permissionTextNumHtml) {
+        permissionTextHtml.innerHTML = permStr;
+        permissionTextNumHtml.innerHTML = combVal;
+    } else {
+        console.error("Can't find id with element");
+    }
+};
+
 
 // Reads numeric value given by checkboxes RWX (4-R, 2-W, 1-E) and combines values using bitwise OR
 const getCheckboxPermissions = (type) => {
@@ -38,9 +52,7 @@ const getCheckboxPermissions = (type) => {
 
     // takes values and uses bitwise OR to put then thogether into an int
     const combinedValue = readValue | writeValue | executeValue;
-    console.log(combinedValue.type);
-
-    return permSwitch(combinedValue);
+    return [combinedValue, permSwitch(combinedValue)];
 };
 
 // Gives correct permission(s) based on octal number value ()
@@ -65,16 +77,6 @@ const permSwitch = (xPermission) => {
         default:
             console.log("Not valid");
             return '---';
-    }
-};
-
-// Displays the permStr (Permission String) in html.
-const displayPermissions = (permStr) => {
-    const permissionTextHtml = document.getElementById('permission-display');
-    if (permissionTextHtml) {
-        permissionTextHtml.innerHTML = permStr;
-    } else {
-        console.error("Can't find id with element");
     }
 };
 

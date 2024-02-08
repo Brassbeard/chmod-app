@@ -37,16 +37,13 @@ h1 {
 }
 
 .permission-display {
-     margin-top: 20px;
-     text-align: center;
- }
-
- #permission-display {
-     font-size: 24px;
-     font-family: 'Courier New', monospace;
-     color: #007BFF;
-     background-color: #f4f4f4;
-     padding: 10px;
-     border-radius: 5px;
-     border: 2px solid #007BFF;
+    margin-top: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-family: 'Courier New', monospace;
+    color: #007BFF;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #007BFF;
 }
