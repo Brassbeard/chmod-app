@@ -9,6 +9,11 @@
 <div class="header-wrapper">
   <h1>CHMOD Checker</h1>
   <p>Calculate Unix Acces Permissions visually.</p>
+
+  <div class="header-settings-bar">
+    <button type="button" class="header-settings-bar-items" id="header-button-octal"> Value </button>
+    <button type="button" class="header-settings-bar-items" id="header-button-mode"> Dark </button>
+  </div>
 </div>
 <!-- Owner -->
 
@@ -17,39 +22,45 @@
     <fieldset class="permission-box">
       <legend>Owner</legend>
         
-        <div>
+        <div class="permission-box-items">
           <input type="checkbox" id="owner-box-read" name="Read" checked />
           <label for="Read">Read</label>
+          <p class="p-box-item-octal">4</p>
         </div>
     
-          <div>
-            <input type="checkbox" id="owner-box-write" name="Write" />
-            <label for="Write">Write</label>
-          </div>
+        <div class="permission-box-items">
+          <input type="checkbox" id="owner-box-write" name="Write" />
+          <label for="Write">Write</label>
+          <p class="p-box-item-octal">2</p>
+        </div>
     
-          <div>
-            <input type="checkbox" id="owner-box-execute"name="Execute" />
-            <label for="Execute">Execute</label>
-          </div>
-        </fieldset>
+        <div class="permission-box-items">
+          <input type="checkbox" id="owner-box-execute"name="Execute" />
+          <label for="Execute">Execute</label>
+          <p class="p-box-item-octal">1</p>
+        </div>
+      </fieldset>
     
     <!-- Group -->
       <fieldset class="permission-box">
         
         <legend>Group</legend>
-        <div>
+        <div class="permission-box-items">
           <input type="checkbox" id="group-box-read" name="Read" checked />
           <label for="Read">Read</label>
+          <p class="p-box-item-octal">4</p>
         </div>
-      
-        <div>
+          
+        <div class="permission-box-items">
           <input type="checkbox" id="group-box-write" name="Write" />
           <label for="Write">Write</label>
+          <p class="p-box-item-octal">2</p>
         </div>
       
-        <div>
+        <div class="permission-box-items">
           <input type="checkbox" id="group-box-execute"name="Execute" />
           <label for="Execute">Execute</label>
+          <p class="p-box-item-octal">1</p>
         </div>
         </fieldset>
       
@@ -57,19 +68,24 @@
       <fieldset class="permission-box">
         <legend>Public</legend>
         
-        <div>
+        <div class="permission-box-items">
           <input type="checkbox" id="public-box-read" name="Read" checked />
           <label for="Read">Read</label>
+          <p class="p-box-item-octal">4</p>
         </div>
+
       
-        <div>
+        <div class="permission-box-items">
           <input type="checkbox" id="public-box-write" name="Write" />
           <label for="Write">Write</label>
+          <p class="p-box-item-octal">2</p>
         </div>
       
-        <div>
+
+        <div class="permission-box-items">
           <input type="checkbox" id="public-box-execute"name="Execute" />
           <label for="Execute">Execute</label>
+          <p class="p-box-item-octal">1</p>
         </div>
     
         </fieldset>

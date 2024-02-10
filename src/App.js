@@ -55,7 +55,7 @@ const getCheckboxPermissions = (type) => {
     return [combinedValue, permSwitch(combinedValue)];
 };
 
-// Gives correct permission(s) based on octal number value ()
+// Gives correct permission(s) based on octal number value 
 const permSwitch = (xPermission) => {
     switch (xPermission) {
         case 0:
@@ -80,6 +80,17 @@ const permSwitch = (xPermission) => {
     }
 };
 
+var isVisibilityToggled = false;
+function cssVisibility(){
+        console.log("header-button-octal button pressed.");
+
+        var elements = document.getElementsByClassName('p-box-item-octal');
+       for (var i = 0; i < elements.length; i++) {
+        elements[i].style.visibility = isVisibilityToggled ? "visible" : "hidden";
+        }
+        // Toggle the visibility state
+        isVisibilityToggled = !isVisibilityToggled;     
+}
 
 // DOM 
 document.getElementById('owner-box-read').addEventListener('change', calculatePermissions);
@@ -93,3 +104,5 @@ document.getElementById('group-box-execute').addEventListener('change', calculat
 document.getElementById('public-box-read').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-write').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-execute').addEventListener('change', calculatePermissions);
+
+document.getElementById('header-button-octal').addEventListener('click', cssVisibility);

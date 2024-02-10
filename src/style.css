@@ -1,22 +1,41 @@
 /* Updated styles to stretch the permission boxes and add a border */
-body {
+
+body{
     margin: 0;
     padding: 0;
 }
 
-.permission-box-container {
-    display: flex;
-    justify-content: space-around;
-    padding: 2%;
-    background: #F1F3F4;
-    }
 
 .header-wrapper{
+    /*display: flex;*/
     color: #141414;
     text-align: center;
     padding: 1% 0;
     background-color: #ffffff;
 }
+
+.header-settings-bar{
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.header-settings-bar-items{
+    width: 5%;
+    height: 10%;
+    margin: 0.2% 0.5%;
+
+}
+
+.permission-box-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+    background: #F1F3F4;
+}
+
 
 .page-wrapper{
     margin: 0.7%;
@@ -58,3 +77,22 @@ body {
     border-radius: 1%;
     /*border: 2px solid #007BFF;*/
 }
+.permission-box-items{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    gap: 1.5%;
+    height: 15%;
+    length: 55%;
+    margin: 2% auto;
+}
+
+.p-box-item-octal{
+    display: flex;
+    margin-left: auto;
+    flex-direction: column;
+    align-content: center;
+    visibility: hidden;
+}
+
+
