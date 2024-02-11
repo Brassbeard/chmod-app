@@ -14,7 +14,6 @@ window.addEventListener('load', function () {
             });
         });
 
-// TO-DO !! Change naming on function? !!//
 const calculatePermissions = () => {
     const ownerPermissions = getCheckboxPermissions('owner');
     const groupPermissions = getCheckboxPermissions('group');
@@ -26,7 +25,7 @@ const calculatePermissions = () => {
 };
 
 
-// Displays the permStr (Permission String) in html.
+// Displays the permStr (Permission String) in HTML.
 const displayPermissions = (permStr, combVal) => {
     const permissionTextHtml = document.getElementById('permission-display-str');
     const permissionTextNumHtml = document.getElementById('permission-display-oct');

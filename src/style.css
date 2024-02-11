@@ -1,5 +1,3 @@
-/* Updated styles to stretch the permission boxes and add a border */
-
 body{
     margin: 0;
     padding: 0;
@@ -7,12 +5,10 @@ body{
 }
 .dark-mode {
   background-color: #313131;
-  /*color: #fff;*/
 }
 
 
 .header-wrapper{
-    /*display: flex;*/
     color: #141414;
     text-align: center;
     padding: 1% 0;
@@ -58,7 +54,7 @@ body{
     text-align: center:
     font-family: 'Courier New', monospace;
     color: #222222;
-    border: 1.3px solid #A9A9A9 /* Border around all boxes */
+    border: 1.3px solid #A9A9A9; 
 }
 
 .page-wrapper.dark-mode{
@@ -92,14 +88,13 @@ body{
 }
 
 .permission-display {
-    margin-top: 0%; /* unused*/
+    margin-top: 0%; 
     text-align: center;
     font-size: 24px;
     
     background-color: #f4f4f4;
     padding: 1%;
     border-radius: 1%;
-    /*border: 2px solid #007BFF;*/
 }
 
 .permission-display.dark-mode{
