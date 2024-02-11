@@ -80,19 +80,21 @@ const permSwitch = (xPermission) => {
     }
 };
 
-var isVisibilityToggled = false;
-function cssVisibility(){
-        console.log("header-button-octal button pressed.");
+// Toggle opacity of octal
+var opacityToggle = false;
+function cssOpacity() {
+    console.log("header-button-octal button pressed.");
 
-        var elements = document.getElementsByClassName('p-box-item-octal');
-       for (var i = 0; i < elements.length; i++) {
-        elements[i].style.visibility = isVisibilityToggled ? "hidden" : "visible";
-        }
-    isVisibilityToggled = !isVisibilityToggled;     
+    var elements = document.getElementsByClassName('p-box-item-octal');
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.opacity = opacityToggle ? 0 : 1;
+    }
+    opacityToggle= !opacityToggle;
 }
 
+// Toggle darkmode
 var darkModeToggle = false;
-function cssDarkmode(toggleState){
+function cssDarkmode(){
     console.log('header-button-mode button pressed.');
     
     var darkModeButton = document.getElementById('header-button-mode');
@@ -103,8 +105,6 @@ function cssDarkmode(toggleState){
     toggleDarkModeOnElements(document.getElementsByClassName('permission-box-container'));
     toggleDarkModeOnElements(document.getElementsByClassName('page-wrapper'));
     toggleDarkModeOnElements(document.getElementsByClassName('permission-display'));
-
-    return toggleState = !toggleState;
 }
 
 function toggleDarkModeOnElements(elements) {
@@ -112,7 +112,6 @@ function toggleDarkModeOnElements(elements) {
         elements[i].classList.toggle('dark-mode');
     }
 }
-
 
 
 // DOM 
@@ -129,5 +128,5 @@ document.getElementById('public-box-write').addEventListener('change', calculate
 document.getElementById('public-box-execute').addEventListener('change', calculatePermissions);
 
 // Toggle visibility state
-document.getElementById('header-button-octal').addEventListener('click', cssVisibility);
+document.getElementById('header-button-octal').addEventListener('click', cssOpacity);
 document.getElementById('header-button-mode').addEventListener('click', cssDarkmode);

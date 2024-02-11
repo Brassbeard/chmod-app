@@ -118,12 +118,16 @@ body{
     margin: 2% auto;
 }
 
-.p-box-item-octal{
+.p-box-item-octal {
     display: flex;
     margin-left: auto;
     flex-direction: column;
     align-content: center;
-    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease;
 }
 
+.p-box-item-octal.show {
+    opacity: 1;
+}
 
