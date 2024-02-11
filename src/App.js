@@ -86,11 +86,34 @@ function cssVisibility(){
 
         var elements = document.getElementsByClassName('p-box-item-octal');
        for (var i = 0; i < elements.length; i++) {
-        elements[i].style.visibility = isVisibilityToggled ? "visible" : "hidden";
+        elements[i].style.visibility = isVisibilityToggled ? "hidden" : "visible";
         }
-        // Toggle the visibility state
-        isVisibilityToggled = !isVisibilityToggled;     
+    isVisibilityToggled = !isVisibilityToggled;     
 }
+
+var darkModeToggle = false;
+function cssDarkmode(toggleState){
+    console.log('header-button-mode button pressed.');
+    
+    var darkModeButton = document.getElementById('header-button-mode');
+    
+    document.body.classList.toggle('dark-mode');
+    toggleDarkModeOnElements(document.getElementsByClassName('permission-box'));
+    toggleDarkModeOnElements(document.getElementsByClassName('header-wrapper'));
+    toggleDarkModeOnElements(document.getElementsByClassName('permission-box-container'));
+    toggleDarkModeOnElements(document.getElementsByClassName('page-wrapper'));
+    toggleDarkModeOnElements(document.getElementsByClassName('permission-display'));
+
+    return toggleState = !toggleState;
+}
+
+function toggleDarkModeOnElements(elements) {
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].classList.toggle('dark-mode');
+    }
+}
+
+
 
 // DOM 
 document.getElementById('owner-box-read').addEventListener('change', calculatePermissions);
@@ -105,4 +128,6 @@ document.getElementById('public-box-read').addEventListener('change', calculateP
 document.getElementById('public-box-write').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-execute').addEventListener('change', calculatePermissions);
 
+// Toggle visibility state
 document.getElementById('header-button-octal').addEventListener('click', cssVisibility);
+document.getElementById('header-button-mode').addEventListener('click', cssDarkmode);

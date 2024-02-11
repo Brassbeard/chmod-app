@@ -3,6 +3,11 @@
 body{
     margin: 0;
     padding: 0;
+    transition: background-color 0.5s ease;
+}
+.dark-mode {
+  background-color: #313131;
+  /*color: #fff;*/
 }
 
 
@@ -12,6 +17,13 @@ body{
     text-align: center;
     padding: 1% 0;
     background-color: #ffffff;
+    transition: background-color 0.5s ease;
+}
+
+.header-wrapper.dark-mode{
+    background-color: #313131;
+    color: #fff;
+    transition: background-color 0.5s ease;
 }
 
 .header-settings-bar{
@@ -22,11 +34,11 @@ body{
     flex-wrap: wrap;
 }
 
+
 .header-settings-bar-items{
     width: 5%;
     height: 10%;
     margin: 0.2% 0.5%;
-
 }
 
 .permission-box-container{
@@ -36,6 +48,10 @@ body{
     background: #F1F3F4;
 }
 
+.permission-box-container.dark-mode{
+    background: #414141;
+    transition: background-color 0.5s ease;
+}
 
 .page-wrapper{
     margin: 0.7%;
@@ -43,6 +59,10 @@ body{
     font-family: 'Courier New', monospace;
     color: #222222;
     border: 1.3px solid #A9A9A9 /* Border around all boxes */
+}
+
+.page-wrapper.dark-mode{
+    border: 1.3px solid #000000;
 }
 
 .permission-box {
@@ -53,17 +73,21 @@ body{
     background-color: #fff;
 }
 
+.permission-box.dark-mode{
+    background-color: #525252;
+    color: #fff;
+    border: 1px solid #000000;
+    transition: background-color 0.5s ease;
+
+}
+
+
 .permission-box input[type="checkbox"] {
     margin-right: 1%;
 }
 
 .permission-box label {
     font-weight: bold;
-
-}
-
-.permission-box label:hover {
-    border-color: #CDDC39
 
 }
 
@@ -77,6 +101,13 @@ body{
     border-radius: 1%;
     /*border: 2px solid #007BFF;*/
 }
+
+.permission-display.dark-mode{
+    background-color: #414141;
+    color: #fff;
+    transition: background-color 0.5s ease;
+}
+
 .permission-box-items{
     flex-direction: row;
     display: flex;
