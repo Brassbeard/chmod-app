@@ -110,8 +110,18 @@ function toggleDarkModeOnElements(elements) {
     for (var i = 0; i < elements.length; i++) {
         elements[i].classList.toggle('dark-mode');
     }
+
+    speeeen();
 }
 
+var numbers = document.getElementsByClassName("permission-display");
+function speeeen()
+{
+    for (var i = 0; i < numbers.length; i++)
+    {
+        numbers[i].classList.toggle("rotate-banana")
+    }
+}
 
 // DOM 
 document.getElementById('owner-box-read').addEventListener('change', calculatePermissions);
