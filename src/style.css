@@ -7,7 +7,6 @@ body{
   background-color: #313131;
 }
 
-
 .header-wrapper{
     color: #141414;
     text-align: center;
@@ -29,7 +28,6 @@ body{
     justify-content: center;
     flex-wrap: wrap;
 }
-
 
 .header-settings-bar-items{
     width: 7%;
@@ -76,7 +74,6 @@ body{
     transition: background-color 0.5s ease;
 
 }
-
 
 .permission-box input[type="checkbox"] {
     margin-right: 1%;
@@ -126,3 +123,18 @@ body{
     opacity: 1;
 }
 
+.rotate-banana {
+    -webkit-animation:spin 2s ease-in-out;
+    -moz-animation:spin 2s ease-in-out;
+    animation:spin 2s ease-in-out;
+}
+
+@-moz-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+@-webkit-keyframes spin {
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }
+}
+@keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+}
