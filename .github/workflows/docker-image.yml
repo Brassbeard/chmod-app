@@ -2,7 +2,8 @@ name: Docker Image CI
 
 on:
   create:
-    tags: [ 'v*.*.*' ]
+    tags:
+      - v*
 
 jobs:
 
