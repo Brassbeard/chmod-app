@@ -126,6 +126,6 @@ document.getElementById('public-box-read').addEventListener('change', calculateP
 document.getElementById('public-box-write').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-execute').addEventListener('change', calculatePermissions);
 
-// Toggle visibility state
+// Toggle opacity
 document.getElementById('header-button-octal').addEventListener('click', cssOpacity);
 document.getElementById('header-button-mode').addEventListener('click', cssDarkmode);
