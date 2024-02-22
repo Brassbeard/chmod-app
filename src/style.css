@@ -1,25 +1,36 @@
+:root {
+    --text-header: #141414;
+    --text-primary: #141414;
+    --text-secondary: #222222;
+    --bg-primary: #ffffff;
+    --bg-secondary: #F1F3F4;
+    --bg-alt: #F4F4F4;
+    --border-color: #A9A9A9;
+}
+
+[data-theme="dark"] {
+    --text-primary: #ffffff;
+    --text-header: #ffffff;
+    --text-secondary: #ffffff;
+    --bg-alt: #525252;
+    --bg-secondary: #414141;
+    --bg-primary: #313131;
+    --border-color: #000000;
+}
+
 body{
     margin: 0;
     padding: 0;
     transition: background-color 0.5s ease;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
 }
-
-.dark-mode {
-  background-color: #313131;
-}
-
 
 .header-wrapper{
-    color: #141414;
+    color: var(--text-header);
     text-align: center;
     padding: 1% 0;
-    background-color: #ffffff;
-    transition: background-color 0.5s ease;
-}
-
-.header-wrapper.dark-mode{
-    background-color: #313131;
-    color: #fff;
+    background-color: var(--bg-primary);
     transition: background-color 0.5s ease;
 }
 
@@ -44,24 +55,15 @@ body{
     display: flex;
     justify-content: space-around;
     padding: 2%;
-    background: #F1F3F4;
-}
-
-.permission-box-container.dark-mode{
-    background: #414141;
-    transition: background-color 0.5s ease;
+    background: var(--bg-secondary);
 }
 
 .page-wrapper{
     margin: 0.7%;
-    text-align: center:
+    text-align: center;
     font-family: 'Courier New', monospace;
-    color: #222222;
-    border: 1.3px solid #A9A9A9;
-}
-
-.page-wrapper.dark-mode{
-    border: 1.3px solid #000000;
+    color: var(--text);
+    border: 1.3px solid var(--border-color);
 }
 
 .permission-box {
@@ -69,17 +71,8 @@ body{
     padding: 2%;
     border: 1px solid #ddd;
     border-radius: 1%;
-    background-color: #fff;
+    background-color: var(--bg-primary);
 }
-
-.permission-box.dark-mode{
-    background-color: #525252;
-    color: #fff;
-    border: 1px solid #000000;
-    transition: background-color 0.5s ease;
-
-}
-
 
 .permission-box input[type="checkbox"] {
     margin-right: 1%;
@@ -95,16 +88,10 @@ body{
     text-align: center;
     font-size: 24px;
     
-    background-color: #f4f4f4;
+    background-color: var(--bg-secondary);
     padding: 1%;
     border-radius: 1%;
     /*border: 2px solid #007BFF;*/
-}
-
-.permission-display.dark-mode{
-    background-color: #414141;
-    color: #fff;
-    transition: background-color 0.5s ease;
 }
 
 .permission-box-items{
@@ -113,7 +100,7 @@ body{
     align-items: center;
     gap: 1.5%;
     height: 15%;
-    length: 55%;
+    width: 55%;
     margin: 2% auto;
 }
 
@@ -129,4 +116,3 @@ body{
 .p-box-item-octal.show {
     opacity: 1;
 }
-

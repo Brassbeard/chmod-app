@@ -1,106 +1,145 @@
 <!-- main.html -->
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-  <title>CHMOD Checker</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>CHMOD Checker</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script type="text/javascript">
+        //Extract system prefered color schema
+        const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)");
+
+        // Set color scheme function
+        const setColorScheme = (theme) => {
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme)
+        }
+
+        const detectColorScheme = () => {
+            let theme = "light";
+            let lsTheme = localStorage.getItem("theme");
+
+            if (lsTheme) {
+                if (lsTheme == "dark") {
+                    theme = "dark";
+                }
+            } else if (systemPrefersDark.matches) {
+                theme = "dark";
+            }
+
+            setColorScheme(theme);
+        };
+
+
+        systemPrefersDark.addEventListener("change", e => {
+            let lsTheme = localStorage.getItem("theme");
+            if (e.matches && lsTheme != "dark") {
+                setColorScheme("dark");
+            } else if (!e.matches && lsTheme == "dark") {
+                setColorScheme("light")
+            }
+        });
+
+        detectColorScheme();
+    </script>
 </head>
+
 <body>
 
-<div class="header-wrapper">
-  <h1>CHMOD Checker</h1>
-  <p>Calculate Unix Acces Permissions visually.</p>
+    <div class="header-wrapper">
+        <h1>CHMOD Checker</h1>
+        <p>Calculate Unix Acces Permissions visually.</p>
 
-  <div class="header-settings-bar">
-    <button type="button" class="header-settings-bar-items" id="header-button-octal"> Value </button>
-    <button type="button" class="header-settings-bar-items" id="header-button-mode"> Dark </button>
-  </div>
-</div>
+        <div class="header-settings-bar">
+            <button type="button" class="header-settings-bar-items" id="header-button-octal"> Value </button>
+            <button type="button" class="header-settings-bar-items" id="header-button-mode"> Dark </button>
+        </div>
+    </div>
 
 
-<div class="page-wrapper">
-  <div class="permission-box-container">
-    <fieldset class="permission-box">
+    <div class="page-wrapper">
+        <div class="permission-box-container">
+            <fieldset class="permission-box">
 
-        <!-- Owner -->       
-      <legend>Owner</legend>
-        <div class="permission-box-items">
-          <input type="checkbox" id="owner-box-read" name="Read" checked />
-          <label for="Read">Read</label>
-          <p class="p-box-item-octal">4</p>
-        </div>
-    
-        <div class="permission-box-items">
-          <input type="checkbox" id="owner-box-write" name="Write" />
-          <label for="Write">Write</label>
-          <p class="p-box-item-octal">2</p>
-        </div>
-    
-        <div class="permission-box-items">
-          <input type="checkbox" id="owner-box-execute"name="Execute" />
-          <label for="Execute">Execute</label>
-          <p class="p-box-item-octal">1</p>
-        </div>
-      </fieldset>
+                <!-- Owner -->
+                <legend>Owner</legend>
+                <div class="permission-box-items">
+                    <input type="checkbox" id="owner-box-read" name="Read" checked />
+                    <label for="Read">Read</label>
+                    <p class="p-box-item-octal">4</p>
+                </div>
 
-    
-    <!-- Group -->
-      <fieldset class="permission-box">
-        
-        <legend>Group</legend>
-        <div class="permission-box-items">
-          <input type="checkbox" id="group-box-read" name="Read" checked />
-          <label for="Read">Read</label>
-          <p class="p-box-item-octal">4</p>
-        </div>
-          
-        <div class="permission-box-items">
-          <input type="checkbox" id="group-box-write" name="Write" />
-          <label for="Write">Write</label>
-          <p class="p-box-item-octal">2</p>
-        </div>
-               <div class="permission-box-items">
-          <input type="checkbox" id="group-box-execute"name="Execute" />
-          <label for="Execute">Execute</label>
-          <p class="p-box-item-octal">1</p>
-        </div>
-      </fieldset>
-      
-      <!-- Public -->
-      <fieldset class="permission-box">
-        <legend>Public</legend>
-        
-        <div class="permission-box-items">
-          <input type="checkbox" id="public-box-read" name="Read" checked />
-          <label for="Read">Read</label>
-          <p class="p-box-item-octal">4</p>
-        </div>
-      
-        <div class="permission-box-items">
-          <input type="checkbox" id="public-box-write" name="Write" />
-          <label for="Write">Write</label>
-          <p class="p-box-item-octal">2</p>
-        </div>
-      
-        <div class="permission-box-items">
-          <input type="checkbox" id="public-box-execute"name="Execute" />
-          <label for="Execute">Execute</label>
-          <p class="p-box-item-octal">1</p>
-        </div>
-    
-        </fieldset>
-  </div>
-  
-  <div class="permission-display">
-    <p id="permission-display-str">--- --- ---</p>
-    <p id="permission-display-oct">000</p>
-  </div>  
+                <div class="permission-box-items">
+                    <input type="checkbox" id="owner-box-write" name="Write" />
+                    <label for="Write">Write</label>
+                    <p class="p-box-item-octal">2</p>
+                </div>
 
-</div>
+                <div class="permission-box-items">
+                    <input type="checkbox" id="owner-box-execute" name="Execute" />
+                    <label for="Execute">Execute</label>
+                    <p class="p-box-item-octal">1</p>
+                </div>
+            </fieldset>
 
-<!-- Fix this, place script in <head></head> -->
-<script src="App.js"></script>
+
+            <!-- Group -->
+            <fieldset class="permission-box">
+
+                <legend>Group</legend>
+                <div class="permission-box-items">
+                    <input type="checkbox" id="group-box-read" name="Read" checked />
+                    <label for="Read">Read</label>
+                    <p class="p-box-item-octal">4</p>
+                </div>
+
+                <div class="permission-box-items">
+                    <input type="checkbox" id="group-box-write" name="Write" />
+                    <label for="Write">Write</label>
+                    <p class="p-box-item-octal">2</p>
+                </div>
+                <div class="permission-box-items">
+                    <input type="checkbox" id="group-box-execute" name="Execute" />
+                    <label for="Execute">Execute</label>
+                    <p class="p-box-item-octal">1</p>
+                </div>
+            </fieldset>
+
+            <!-- Public -->
+            <fieldset class="permission-box">
+                <legend>Public</legend>
+
+                <div class="permission-box-items">
+                    <input type="checkbox" id="public-box-read" name="Read" checked />
+                    <label for="Read">Read</label>
+                    <p class="p-box-item-octal">4</p>
+                </div>
+
+                <div class="permission-box-items">
+                    <input type="checkbox" id="public-box-write" name="Write" />
+                    <label for="Write">Write</label>
+                    <p class="p-box-item-octal">2</p>
+                </div>
+
+                <div class="permission-box-items">
+                    <input type="checkbox" id="public-box-execute" name="Execute" />
+                    <label for="Execute">Execute</label>
+                    <p class="p-box-item-octal">1</p>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <div class="permission-display">
+            <p id="permission-display-str">--- --- ---</p>
+            <p id="permission-display-oct">000</p>
+        </div>
+
+    </div>
+
+    <!-- Fix this, place script in <head></head> -->
+    <script src="App.js"></script>
 
 </body>
-</html> 
 
+</html>
