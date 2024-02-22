@@ -1,7 +1,5 @@
 FROM nginx:alpine
 
-EXPOSE 80
-
 # Copy nginx server config
 COPY nginx.conf /etc/nginx/nginx.conf
 
