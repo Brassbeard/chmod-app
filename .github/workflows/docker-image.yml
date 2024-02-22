@@ -1,12 +1,9 @@
-name: Docker Image CI
+name: Docker Image Build
 
 on:
   push:
       branches:
       - main
-  create:
-    tags:
-      - v*
 
 jobs:
 
