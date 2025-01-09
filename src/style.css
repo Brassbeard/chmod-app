@@ -45,9 +45,17 @@ body{
 .header-settings-bar-items {
     flex: 0 0 auto; /* Allow items to grow and shrink based on content */
     height: auto;
-    margin: 0.2% 0.5%;
-    padding: 5px; /* Add padding for better appearance */
+    width: 6rem;
+    margin: 0.2% 1%;
+    padding: 0.3rem; /* Add padding for better appearance */
     white-space: nowrap; /* Prevent text from wrapping to the next line */
+    transition-duration: 0.5s;
+    border-radius: 5%;
+    border: none;
+    font-size: 1rem;
+}
+
+.header-settings-bar-items:hover{
 }
 
 
@@ -57,6 +65,7 @@ body{
     padding: 2%;
     background: var(--bg-secondary);
 }
+
 
 .page-wrapper{
     margin: 0.7%;
@@ -86,8 +95,7 @@ body{
 .permission-display {
     margin-top: 0%; /* unused*/
     text-align: center;
-    font-size: 24px;
-    
+    font-size: 24px auto;
     background-color: var(--bg-secondary);
     padding: 1%;
     border-radius: 1%;
@@ -98,14 +106,16 @@ body{
     flex-direction: row;
     display: flex;
     align-items: center;
-    gap: 1.5%;
-    height: 15%;
-    width: 55%;
-    margin: 2% auto;
+    gap: 9%;
+    height: 15% auto;
+    width: 55% auto;
+    margin: 1% auto;
+    
 }
 
 .p-box-item-octal {
     display: flex;
+    width: 50%;
     margin-left: auto;
     flex-direction: column;
     align-content: center;

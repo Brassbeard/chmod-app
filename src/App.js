@@ -37,7 +37,6 @@ const displayPermissions = (permStr, combVal) => {
     }
 };
 
-
 // Reads numeric value given by checkboxes RWX (4-R, 2-W, 1-E) and combines values using bitwise OR
 const getCheckboxPermissions = (type) => {
     const readCheckbox = document.getElementById(`${type}-box-read`).checked;
@@ -53,6 +52,7 @@ const getCheckboxPermissions = (type) => {
     const combinedValue = readValue | writeValue | executeValue;
     return [combinedValue, permSwitch(combinedValue)];
 };
+
 
 // Gives correct permission(s) based on octal number value 
 const permSwitch = (xPermission) => {
@@ -99,8 +99,6 @@ const toggleTheme = () => {
     } else {
         setColorScheme("dark");
     }
-
-
 };
 
 // DOM 
