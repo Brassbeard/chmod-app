@@ -1,25 +1,25 @@
 // CHMOD Calculator- UNIX Access Permissions
 
 // Unchecks checkboxes on window load
-window.addEventListener('load', function () {
-  const checkboxGroups = ['owner', 'group', 'public'];
+window.addEventListener('load', function() {
+    const checkboxGroups = ['owner', 'group', 'public'];
 
-  checkboxGroups.forEach(group => {
-      const checkboxes = ['read', 'write', 'execute'];
+    checkboxGroups.forEach(group => {
+        const checkboxes = ['read', 'write', 'execute'];
 
-          checkboxes.forEach(permission => {
-                  const checkboxId = `${group}-box-${permission}`;
-                  document.getElementById(checkboxId).checked = false; // Set default to checked
-                });
-            });
+        checkboxes.forEach(permission => {
+            const checkboxId = `${group}-box-${permission}`;
+            document.getElementById(checkboxId).checked = false; // Set default to checked
         });
+    });
+});
 
 const calculatePermissions = () => {
     const ownerPermissions = getCheckboxPermissions('owner');
     const groupPermissions = getCheckboxPermissions('group');
     const publicPermissions = getCheckboxPermissions('public');
     const combinedPermissions = [ownerPermissions[1], groupPermissions[1], publicPermissions[1]].join(' ');
-    const combinedPermissionNum = [ownerPermissions[0], groupPermissions[0], publicPermissions[0]].join(' ');    
+    const combinedPermissionNum = [ownerPermissions[0], groupPermissions[0], publicPermissions[0]].join(' ');
     console.log(combinedPermissions, '\n', combinedPermissionNum);
     displayPermissions(combinedPermissions, combinedPermissionNum);
 };
@@ -88,30 +88,20 @@ function cssOpacity() {
     for (var i = 0; i < elements.length; i++) {
         elements[i].style.opacity = opacityToggle ? 0 : 1;
     }
-    opacityToggle= !opacityToggle;
+    opacityToggle = !opacityToggle;
 }
 
 // Toggle darkmode
-var darkModeToggle = false;
-function cssDarkmode(){
-    console.log('header-button-mode button pressed.');
-    
-    var darkModeButton = document.getElementById('header-button-mode');
-    
-    document.body.classList.toggle('dark-mode');
-    toggleDarkModeOnElements(document.getElementsByClassName('permission-box'));
-    toggleDarkModeOnElements(document.getElementsByClassName('header-wrapper'));
-    toggleDarkModeOnElements(document.getElementsByClassName('permission-box-container'));
-    toggleDarkModeOnElements(document.getElementsByClassName('page-wrapper'));
-    toggleDarkModeOnElements(document.getElementsByClassName('permission-display'));
-}
-
-function toggleDarkModeOnElements(elements) {
-    for (var i = 0; i < elements.length; i++) {
-        elements[i].classList.toggle('dark-mode');
+const toggleTheme = () => {
+    let lsTheme = localStorage.getItem("theme");
+    if (lsTheme == "dark") {
+        setColorScheme("light");
+    } else {
+        setColorScheme("dark");
     }
-}
 
+
+};
 
 // DOM 
 document.getElementById('owner-box-read').addEventListener('change', calculatePermissions);
@@ -128,4 +118,4 @@ document.getElementById('public-box-execute').addEventListener('change', calcula
 
 // Toggle opacity
 document.getElementById('header-button-octal').addEventListener('click', cssOpacity);
-document.getElementById('header-button-mode').addEventListener('click', cssDarkmode);
+document.getElementById('header-button-mode').addEventListener('click', toggleTheme);
