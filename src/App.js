@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
 
     checkboxGroups.forEach(group => {
         const checkboxes = ['read', 'write', 'execute'];
-
+        const fullPermission = false;
         checkboxes.forEach(permission => {
             const checkboxId = `${group}-box-${permission}`;
             document.getElementById(checkboxId).checked = false; // Set default to checked
@@ -21,6 +21,7 @@ const calculatePermissions = () => {
     const combinedPermissions = [ownerPermissions[1], groupPermissions[1], publicPermissions[1]].join(' ');
     const combinedPermissionNum = [ownerPermissions[0], groupPermissions[0], publicPermissions[0]].join(' ');
     console.log(combinedPermissions, '\n', combinedPermissionNum);
+
     displayPermissions(combinedPermissions, combinedPermissionNum);
 };
 
@@ -50,8 +51,15 @@ const getCheckboxPermissions = (type) => {
 
     // takes values and uses bitwise OR to put then thogether into an int
     const combinedValue = readValue | writeValue | executeValue;
+    const ifFullValue = (combinedValue) => {
+      if (combinedValue == 7){
+        console.log("Full value!");
+    }
+      
+  }
     return [combinedValue, permSwitch(combinedValue)];
 };
+
 
 
 // Gives correct permission(s) based on octal number value 
@@ -102,14 +110,17 @@ const toggleTheme = () => {
 };
 
 // DOM 
+document.getElementById('owner-btn-all').addEventListener('change', calculatePermissions);
 document.getElementById('owner-box-read').addEventListener('change', calculatePermissions);
 document.getElementById('owner-box-write').addEventListener('change', calculatePermissions);
 document.getElementById('owner-box-execute').addEventListener('change', calculatePermissions);
 
+document.getElementById('group-btn-all').addEventListener('change', calculatePermissions);
 document.getElementById('group-box-read').addEventListener('change', calculatePermissions);
 document.getElementById('group-box-write').addEventListener('change', calculatePermissions);
 document.getElementById('group-box-execute').addEventListener('change', calculatePermissions);
 
+document.getElementById('group-btn-all').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-read').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-write').addEventListener('change', calculatePermissions);
 document.getElementById('public-box-execute').addEventListener('change', calculatePermissions);

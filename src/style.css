@@ -92,6 +92,18 @@ body{
 
 }
 
+.check-all-btn{
+  width: 1rem;
+  height: 1rem;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
+}
+
+
+
 .permission-display {
     margin-top: 0%; /* unused*/
     text-align: center;
@@ -99,7 +111,6 @@ body{
     background-color: var(--bg-secondary);
     padding: 1%;
     border-radius: 1%;
-    /*border: 2px solid #007BFF;*/
 }
 
 .permission-box-items{
@@ -111,6 +122,10 @@ body{
     width: 55% auto;
     margin: 1% auto;
     
+}
+
+.check-all-box{
+
 }
 
 .p-box-item-octal {
