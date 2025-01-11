@@ -55,10 +55,6 @@ body{
     font-size: 1rem;
 }
 
-.header-settings-bar-items:hover{
-}
-
-
 .permission-box-container{
     display: flex;
     justify-content: space-around;
@@ -66,12 +62,10 @@ body{
     background: var(--bg-secondary);
 }
 
-
 .page-wrapper{
     margin: 0.7%;
     text-align: center;
     font-family: 'Courier New', monospace;
-    color: var(--text);
     border: 1.3px solid var(--border-color);
 }
 
@@ -92,23 +86,25 @@ body{
 
 }
 
+.check-all-btn{
+    width: 1rem;
+    height: 1rem;
+    margin: 4px 2px;
+    border-radius: 12px;
+}
+
 .permission-display {
     margin-top: 0%; /* unused*/
-    text-align: center;
-    font-size: 24px auto;
     background-color: var(--bg-secondary);
     padding: 1%;
     border-radius: 1%;
-    /*border: 2px solid #007BFF;*/
 }
 
 .permission-box-items{
     flex-direction: row;
     display: flex;
     align-items: center;
-    gap: 9%;
-    height: 15% auto;
-    width: 55% auto;
+    gap: 5%;
     margin: 1% auto;
     
 }
